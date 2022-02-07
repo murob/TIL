@@ -31,3 +31,12 @@ base-packege를 설정한다. 또한 서블릿(컨트롤러)에서 비즈니스 
 BeanFactory는 클라이언트 요청에 의해서 Bean객체가 사용되는 시점(Lazy Loading)에 객체를 생성하는 방식을 사용하는 반면에 ApplicationContext는 컨테이너가 구동되는 시점에 객체들을 생성하는 
 Pre-Loading 방식이라는 차이점이 있다. 또한 트랜잭션 관리, 메시지 기반의 다국어 처리, AOP 처리 등 DI(Dependency Injection)와 IoC(Inverse of Conversion) 외에도 많은 부분을 지원하기 때문에
 Bean 객체를 생성하고 관리하는 스프링 컨테이너로 ApplicationContext를 주로 사용한다. Application Context의 종류는 여러개가 있는데 해당 내용은 다음에 포스팅 하도록 하겠다.
+
+
+정리하자면
+- web.xml은 servlet, DispatcherServlet(FrontController), ApplicationContext(스프링 Bean 컨테이너), filter, listner 웹 어플리케이션의 설정을 구성한다.
+- servlet-context.xml은 DispatcherServlet 설정 역할한다. 웹 어플리케이션에서 사용하는 서블릿을 등록하고 요청에 맞는 서블릿을 찾아서 서비스 로직의 처리하고 
+  서블릿에서 처리한 결과를 반환 받아 알맞는 view로 보내주고 처리된 view페이지를 클라이언트로 보내주는 DispatcherServlet을 설정하는 파일이다.
+- applicationContext.xml은 서블릿에서 공용으로 사용한 Bean 객체를 등록하고 관리하는 ApplicationContext 설정파일이다. ApplicationContext는 트랜잭션 관리, 다국어 처리, AOP 등 다양한
+  기능을 지원하며, 컨테이너가 구동되는 시점에 객체들을 생성하는 Pre-Loading 방식이라는 특징이 있다.
+
