@@ -12,7 +12,7 @@ web.xml은 배포 서술자라고 하며 WAS(톰켓) 가동시 WEB-INF 하위에
 다른 서블릿으로 매핑처리를 수행한다. web.xml에 모든 서블릿을 작성하는 것이 아닌 DispatcherServlet이라는 서블릿을 작성해서 
 모든 요청을 DispatcherServlet으로 받고 DispatcherServlet 설정파일에 설정해둔 서블릿에 매핑되어 처리된다.
 
-DispatcherServlet을 사용함에 따라 web.xml의 역할이 줄어들었다. URL요청을 처리하기  위해 모든 서블릿을 web.xml에 등록할 필요가 없어졌기 때문이다.
+DispatcherServlet을 사용함에 따라 web.xml의 역할이 줄어들었다. URL요청을 처리하기 위해 모든 서블릿을 web.xml에 등록할 필요가 없어졌기 때문이다.
 그럼에도 web.xml의 역할은 중요하다. 모든 URL 요청을 받기 위한 DispatcherServlet을 서블릿으로 등록해줘야하며 
 <filter>나 <listener> 설정하는 역할 또한 web.xml의 역할이기 때문이다.
 
