@@ -1,5 +1,5 @@
 <스프링 프레임워크 동작 원리>
-1) web.xml
+1) web.xml (배포서술자) -> 컨텍스트 등록
 2) servlet-context.xml (서블릿 컨텍스트, Handler Mapping) -> 스프링 컨테이너 설정 파일(자식)
 3) applicationContext.xml (루트 컨테이너) -> 스프링 컨테이너 설정 파일(부모)
 
