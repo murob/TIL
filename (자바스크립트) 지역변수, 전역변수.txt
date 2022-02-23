@@ -1,0 +1,43 @@
+(자바스크립트) 지역변수, 전역변수
+
+1) 함수내 동일한 이름의 지역변수에 값을 넣는 경우
+let a = "가";
+
+function show(){
+    a="나";
+}
+alert(a);
+show();
+alert(a);
+
+출력:
+가
+나
+
+2) 함수내 지역변수에서 동일한 이름의 변수를 재선언후 값을 넣는 경우
+let a = "가";
+
+function show(){
+    let a="나";
+}
+alert(a);
+show();
+alert(a);
+
+출력:
+가
+가
+
+3) 매개변수를 통해 전연변수를 복사하여 사용하는 경우
+let a = "가";
+
+function show(a){
+    a="나";
+}
+alert(a);
+show();
+alert(a);
+
+출력:
+가
+가
