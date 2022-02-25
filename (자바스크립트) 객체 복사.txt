@@ -24,4 +24,37 @@ userA와 userB 객체의 차이는 userA의 경우에는 user 객체의 주소 �
 
 Object.assign 사용방법은 ---> Object.assign(dest, [src1, src2, src3...]) 이렇게 사용된다.
 첫 번째 인수인 dest는 목표로하는 객체이고 src1, src2, src3..는 목표로 하고 있는 객체로 프로퍼티를 복사할 객체이다.
+
 즉, dest라는 객체에 src1, src2, src3의 주소값이 아닌 순수 프로퍼티 값들만 복사한다.
+
+하지만, 예외상황이 있다. 객체 안에 객체가 중첩되어있을 경우이다.
+
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = Object.assign({}, user);
+
+alert( user.sizes === clone.sizes ); // true
+
+// user와 clone는 sizes를 공유한다.
+user.sizes.width++;       
+alert(clone.sizes.width); // 51
+
+user 참조변수를 사용하는 객체의 값을 clone이라는 변수에 Object.assign을 통해 객체를 복제했다.
+좀 전 설명 대로라면 객체주소값을 복사한 것이 아닌 순수 프로퍼티 값만 복사한 것이기에 서로 다른 독립적인
+객체여야한다. name의 경우에는 서로 다른 독립적인 프로퍼티이지만 객체인 sizes의 경우에는 객체주소 값이 
+복사가 되므로 Object.assign을 했음에도 불구하고 같은 값으로 보게 된다. 
+
+이경우에는 user[key]의 각 값을 검사하면서, 그 값이 객체인 경우 객체의 구조도 복사해주는 반복문을 사용해야한다.
+이러한 방식을 '깊은 복사(deep cloning)'라고 한다.
+
+깊은 복사 시 사용되는 표준 알고리즘인 Structured cloning algorithm을 사용하면 위 사례를 비롯한 다양한 상황에서
+객체를 복사할 수 잇따.
+
+자바스크립트 라이브러리 lodash의 메서드인 _.cloneDeep(obj)을 사용하면 이 알고리즘을 직접 구현하지 않고도
+깊은 복사를 처리할 수 있다.
