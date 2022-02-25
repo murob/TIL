@@ -1,4 +1,4 @@
-(ÀÚ¹Ù½ºÅ©¸³Æ®) °´Ã¼ º¹»ç
+(ìžë°”ìŠ¤í¬ë¦½íŠ¸) ê°ì²´ ë³µì‚¬
 
 let user = {
     name: "ji",
@@ -9,19 +9,19 @@ let user = {
 let userA = user;
 let userB = Object.assign({}, user);
 
-alert(user == userA);
-alert(user == userB);
+alert(user == userA); //true
+alert(user == userB); //false
 
-À§ ¿¹Á¦¸¦ º¸¸é user°´Ã¼¸¦ userA¿Í userB°¡ º¹»çÇØ¼­ »ç¿ëÇÏ°í ÀÖ´Ù.
-userAÀÇ °æ¿ì user ÂüÁ¶º¯¼ö¸¦ ±×´ë·Î ¹Þ¾Ò°í
-userBÀÇ °æ¿ì¿¡´Â Object.assignÀ» ÅëÇØ user°´Ã¼ÀÇ ÇÁ·ÎÆÛÆ¼ °ªµéÀ» ¹Þ¾Ò´Ù.
+ìœ„ ì˜ˆì œë¥¼ ë³´ë©´ userê°ì²´ë¥¼ userAì™€ userBê°€ ë³µì‚¬í•´ì„œ ì‚¬ìš©í•˜ê³  ìžˆë‹¤.
+userAì˜ ê²½ìš° user ì°¸ì¡°ë³€ìˆ˜ë¥¼ ê·¸ëŒ€ë¡œ ë°›ì•˜ê³ 
+userBì˜ ê²½ìš°ì—ëŠ” Object.assignì„ í†µí•´ userê°ì²´ì˜ í”„ë¡œí¼í‹° ê°’ë“¤ì„ ë°›ì•˜ë‹¤.
 
-userA¿Í userB °´Ã¼ÀÇ Â÷ÀÌ´Â userAÀÇ °æ¿ì¿¡´Â user °´Ã¼ÀÇ ÁÖ¼Ò °ªÀ» ±×´ë·Î ¹Þ¾ÒÀ¸¹Ç·Î µÎ ÂüÁ¶º¯¼ö´Â °°Àº °´Ã¼¸¦ ÂüÁ¶ÇÏ°í ÀÖ´Ù.
-±×·¯¹Ç·Î µÑ Áß ÇÏ³ªÀÇ ÇÁ·ÎÆÛÆ¼ °ªÀÌ ¹Ù²î¸é ´Ù¸¥ °´Ã¼ÀÇ ÇÁ·ÎÆÛÆ¼ °ªµµ °°ÀÌ ¹Ù²ï´Ù.
+userAì™€ userB ê°ì²´ì˜ ì°¨ì´ëŠ” userAì˜ ê²½ìš°ì—ëŠ” user ê°ì²´ì˜ ì£¼ì†Œ ê°’ì„ ê·¸ëŒ€ë¡œ ë°›ì•˜ìœ¼ë¯€ë¡œ ë‘ ì°¸ì¡°ë³€ìˆ˜ëŠ” ê°™ì€ ê°ì²´ë¥¼ ì°¸ì¡°í•˜ê³  ìžˆë‹¤.
+ê·¸ëŸ¬ë¯€ë¡œ ë‘˜ ì¤‘ í•˜ë‚˜ì˜ í”„ë¡œí¼í‹° ê°’ì´ ë°”ë€Œë©´ ë‹¤ë¥¸ ê°ì²´ì˜ í”„ë¡œí¼í‹° ê°’ë„ ê°™ì´ ë°”ë€ë‹¤.
 
-ÀÌ¿Í´Þ¸® userBÀÇ °æ¿ì¿¡´Â user °´Ã¼ÀÇ ÇÁ·ÎÆÛÆ¼¸¸ ¹Þ¾Æ¿À´Â Object.assign ¸Þ¼­µå¸¦ ÅëÇØ ÇÁ·ÎÆÛÆ¼ °ªÀº º¹»ç ¹Þ¾Æ¿ÀÁö¸¸
-¼­·Î ´Ù¸¥ µ¶¸³ÀûÀÎ °´Ã¼·Î Ãë±ÞµÈ´Ù.
+ì´ì™€ë‹¬ë¦¬ userBì˜ ê²½ìš°ì—ëŠ” user ê°ì²´ì˜ í”„ë¡œí¼í‹°ë§Œ ë°›ì•„ì˜¤ëŠ” Object.assign ë©”ì„œë“œë¥¼ í†µí•´ í”„ë¡œí¼í‹° ê°’ì€ ë³µì‚¬ ë°›ì•„ì˜¤ì§€ë§Œ
+ì„œë¡œ ë‹¤ë¥¸ ë…ë¦½ì ì¸ ê°ì²´ë¡œ ì·¨ê¸‰ëœë‹¤.
 
-Object.assign »ç¿ë¹æ¹ýÀº ---> Object.assign(dest, [src1, src2, src3...]) ÀÌ·¸°Ô »ç¿ëµÈ´Ù.
-Ã¹ ¹øÂ° ÀÎ¼öÀÎ dest´Â ¸ñÇ¥·ÎÇÏ´Â °´Ã¼ÀÌ°í src1, src2, src3..´Â ¸ñÇ¥·Î ÇÏ°í ÀÖ´Â °´Ã¼·Î ÇÁ·ÎÆÛÆ¼¸¦ º¹»çÇÒ °´Ã¼ÀÌ´Ù.
-Áï, dest¶ó´Â °´Ã¼¿¡ src1, src2, src3ÀÇ ÁÖ¼Ò°ªÀÌ ¾Æ´Ñ ¼ø¼ö ÇÁ·ÎÆÛÆ¼ °ªµé¸¸ º¹»çÇÑ´Ù.
+Object.assign ì‚¬ìš©ë°©ë²•ì€ ---> Object.assign(dest, [src1, src2, src3...]) ì´ë ‡ê²Œ ì‚¬ìš©ëœë‹¤.
+ì²« ë²ˆì§¸ ì¸ìˆ˜ì¸ destëŠ” ëª©í‘œë¡œí•˜ëŠ” ê°ì²´ì´ê³  src1, src2, src3..ëŠ” ëª©í‘œë¡œ í•˜ê³  ìžˆëŠ” ê°ì²´ë¡œ í”„ë¡œí¼í‹°ë¥¼ ë³µì‚¬í•  ê°ì²´ì´ë‹¤.
+ì¦‰, destë¼ëŠ” ê°ì²´ì— src1, src2, src3ì˜ ì£¼ì†Œê°’ì´ ì•„ë‹Œ ìˆœìˆ˜ í”„ë¡œí¼í‹° ê°’ë“¤ë§Œ ë³µì‚¬í•œë‹¤.
