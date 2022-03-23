@@ -28,3 +28,26 @@ function filterRangeInPlace(r, a, b) {
 문제에서 주어진 배열에서 a와 b사이에 있지 않은 요소를 reduceNum 변수에 담아준다.
 그리고 기존 배열과 reduceNum을 비교하여 reduceNum이 포함하지 않는 값을 배열에 담아준다.
 이로써 a와 b 사이의 값이 아닌 값을 배열에서 제거할 수 있다.
+
+
+풀이2:
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4);
+
+alert( arr );
+
+function filterRangeInPlace(r, a, b) {
+    for(let i=0; i<r.length; i++) {
+        if(r[i] < a || r[i] > b) {
+            r.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+설명:
+반복문을 통해 배열 안의 요소들을 하나씩 판단한다.
+판단 조건문은 a보다 작고 b보다 클 경우이며 해당 조건에 걸릴 경우 splice메서드를 통해 해당 요소를 배열에서 제거한다.
+마지막 i--는 splice으로 요소 제거시 빈공간은 자동을 당겨지기 때문에 값하나를 지웠으면 뒤에 있던 요소가 앞으로 당겨지므로 인덱스 값을 줄이는 것이다.
