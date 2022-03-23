@@ -17,14 +17,13 @@ alert( arr ); // [3, 1]
 
 풀이:
 
-let arr = [5, 3, 8, 1];
-
-filterRangeInPlace(arr, 1, 4);
-
-alert( arr );
-
 function filterRangeInPlace(r, a, b) {
     reduceNum = r.filter(item => item < a || item > b); //[5, 8]
     
     arr = r.filter(item => !reduceNum.includes(item));
 }
+
+
+설명:
+문제에서 주어진 a와 b사이에 있지 않은 요소를 reduceNum 변수에 담아준다.
+그리고 인수로 받아온 배열에서 reduceNum 배열과 비교하여 포함하지 않는 값을 배열에 담아준다.
