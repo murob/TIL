@@ -26,4 +26,5 @@ function filterRangeInPlace(r, a, b) {
 
 설명:
 문제에서 주어진 배열에서 a와 b사이에 있지 않은 요소를 reduceNum 변수에 담아준다.
-그리고 인수로 받아온 배열에서 reduceNum 배열과 비교하여 포함하지 않는 값을 배열에 담아준다.
+그리고 기존 배열과 reduceNum을 비교하여 reduceNum이 포함하지 않는 값을 배열에 담아준다.
+이로써 a와 b 사이의 값이 아닌 값을 배열에서 제거할 수 있다.
